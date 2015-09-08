@@ -12,8 +12,16 @@ module.exports = function(grunt) {
         'ext':'html',
       }
     },
+    'less': {
+      'development': {
+        'files': {
+          'app/styles/app.css': 'app/styles/less/app.less',
+        }
+      },
+    },
   });
   grunt.loadNpmTasks('grunt-http-server');
+  grunt.loadNpmTasks('grunt-contrib-less');
 
-  grunt.registerTask('default', ['http-server']);
+  grunt.registerTask('default', ['less', 'http-server']);
 };
