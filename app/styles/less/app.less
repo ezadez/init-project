@@ -1,3 +1,131 @@
-body {
-  background-color : transparnet;
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }
+
+@width-side-nav: 25%;
+@media-width-side-nav-fixed: 650px;
+@width-side-nav-fixed: 162px;
+@animation-time-side-nav: 0.5s;
+
+body {
+  font-family: "RobotoDraft","Roboto",sans-serif;
+}
+.side-nav-wrapper {
+  @width-left-padding: 22px;
+  @color-border: #e0e0e0;
+
+  list-style: none;
+  position: fixed;
+  height: 100%;
+  width: @width-side-nav;
+  padding: 0;
+  margin: 0;
+  background-color: #fff;
+  overflow-y: auto;
+
+  @media(max-width: @media-width-side-nav-fixed) {
+    width: @width-side-nav-fixed;
+  }
+
+  &.ng-enter,
+  &.ng-leave {
+    transition: all linear @animation-time-side-nav;
+  }
+  &.ng-enter,
+  &.ng-leave.ng-leave-active{
+    transform: translate(-100%,0);
+  }
+   &.ng-leave,
+   &.ng-enter.ng-enter-active{
+    transform: translate(0,0);
+  }
+  side-nav-inner {
+    position: relative;
+  }
+  nav {
+    padding: 12px 0;
+    height: 100%;
+    dl {
+      dt {
+        padding-bottom: 15px;
+        padding-top: 15px;
+        padding-left: @width-left-padding;
+        padding-right: 0px;
+
+        a, a:hover {
+          color: #333;
+          font-weight: 700;
+          font-size: 13px;
+          text-decoration: none;
+          &.on {
+            color: #03a9f4;
+          }
+        }
+      }
+    }
+  }
+
+  .tools, #logo {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: @width-left-padding;
+    padding-right: 0px;
+    display: block;
+  }
+
+  .tools {
+    font-size: 30px;
+    border-bottom: 1px solid @color-border;
+    color: #767676;
+    i {
+      margin-right: 20px;
+    }
+  }
+  #logo {
+    border-top: 1px solid @color-border;
+    font-weight: 400;
+    font-size: 15px;
+  }
+}
+
+.nav-toggle {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 0;
+  padding-right: 10px;
+  margin-right: 15px;
+  margin-bottom: 8px;
+  background-color: transparent;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  position: absolute;
+  top:0;
+  i {
+    color: #ccc;
+    font-size: 24px;
+  }
+}
+
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  transition: all linear @animation-time-side-nav;
+
+  &.nav-opened {
+    left: @width-side-nav;
+    @media(max-width: @media-width-side-nav-fixed) {
+      left: @width-side-nav-fixed;
+    }
+  }
+  &>div {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@import "channel";
