@@ -35,7 +35,7 @@ ezadApp.controller('mainCtrl',
   '$location',
   'ROUTE_CONFIG',
   function($scope, $location, ROUTE_CONFIG) {
-    $scope.menuOpen = true;
+    $scope.navOpened = false;
     $scope.routes = ROUTE_CONFIG['routes'];
     $scope.product = ROUTE_CONFIG['product']['name'];
 

@@ -19,8 +19,6 @@ ezadApp.controller('ChannelCtrl', ['$scope', '$timeout',
                   },
                  };
       $scope.channels.push(data);
-      //상위 스코프에서 받아와야 함
-      $scope.toggleOpen = false;
     }
   }
 ]);

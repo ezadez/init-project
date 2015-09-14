@@ -41,11 +41,11 @@ ezadApp.directive('channelsView', [
           //scope.getImage({id: scope.channel.id, image: scope.image});
         }
 
-        scope.$watch( function() { return scope.toggleOpen}, function(newValue, oldValue) {
+        scope.$watch( function() { return scope.toggleOpen }, function(newValue, oldValue) {
           if(scope.channel.show) {
             if(newValue) {                
-                element[0].style.width = "100%";
-                element[0].style.left = "0";
+                element[0].style.width = "90%";
+                element[0].style.left = "5%";
               } else {
                 element[0].style.width = "";
                 element[0].style.left = "";
