@@ -9,6 +9,7 @@
 
 body {
   font-family: "RobotoDraft","Roboto",sans-serif;
+  overflow: hidden;
 }
 .side-nav-wrapper {
   @width-left-padding: 22px;
@@ -22,6 +23,7 @@ body {
   margin: 0;
   background-color: #fff;
   overflow-y: auto;
+  z-index: 100;
 
   @media(max-width: @media-width-side-nav-fixed) {
     width: @width-side-nav-fixed;
@@ -129,3 +131,4 @@ body {
 }
 
 @import "channel";
+@import "channels-view";
